@@ -15,44 +15,42 @@ var wrongGuesses = [];
 var winCounter = 0;
 var lossCounter = 0;
 var numGuesses = 9;
-var wordsList["Superman", "Batman", "Wonder Women", "Captain America", "Iron Man", "Spider Man"]
+var wordsList = ["Superman", "Batman", "Wonder Woman", "Captain America", "Iron Man", "Spider Man"];
 chosenWord = wordsList[Math.floor(Math.random() * wordsList.length)];
     if (chosenWord[i] === letter) {
-      // If the letter exists then toggle this boolean to true. This will be used in the next step.
+    // If the letter exists then toggle this boolean to true. This will be used in the next step.
       letterInWord = true;
     }
-// Promp user and ask them to guess a letter between a and z.
+    //display the number of blanks in html
+    numBlanks = chosenWord.length
+	// User guesses a letter for the word
 document.onkeyup = function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-	// check to see if the letter is correct within the word.
-	if (userGuess === letterInWord) {
+	//check to see if the letter is in the word.
+	for (i=0; chosenWord.length; i++;) {
+	if (userGuess === chosen {
 
-		// subtract number of guesses.
+	//if correct, place the letter in the correct space.
+	
 		numGuesses--;
-
+}
 	}
 	else {
 
 		numGuesses--;
 		wrongGuesses.push(userGuess);
 	}
-
-	if (guessesLeft === 0) {
-		alert("Game Over! You used up all 10 guesses.");
-		loses++;
-		guessesLeft=10;
-		wrongGuesses=[];
-		computerGuess=computerChoices[Math.floor(Math.random()* computerChoices.length)];
-	}
 	// if letter is wrong prompt to the user to guess again and subtract guesses left. repeat until user gets the letter correct or if they used up all guesses.
 
 
 	var html=
 	"<p>Wins: " + wins + "</p>" +
-	"<p>Guesses Left: " + guessesLeft + "</p>" +
-	"<p>Letters Guessed: " + wrongGuesses + "</p>";
+	"<p>Current Word <br>" + letterInWord+ "</p>" +
+	"<p>Number of Guesses Remaining " + numGuesses + "</p>" +
+	"<p>Letters Already Guessed <br>" + wrongGuesses + "</p";
 
+ 
 	document.querySelector("#game").innerHTML = html;
 
 // 	if (guessesLeft===0) {
